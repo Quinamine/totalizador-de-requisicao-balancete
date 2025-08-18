@@ -1,0 +1,443 @@
+.ficha {
+    width: var(--layout-width);
+    margin: 30px auto;
+    padding-left: 20px;
+    position: relative;
+}
+@media print {
+    .ficha {
+        margin-top: 10px;
+    }
+}
+.ficha--duplicado {
+    --cor-de-duplicado: yellow;
+    background-color: var(--cor-de-duplicado);
+}
+.ficha--triplicado {
+    --cor-de-triplicado: #e0edf3;
+    background-color: var(--cor-de-triplicado);
+}
+.ficha--duplicado *,
+.ficha--triplicado * {
+    background-color: inherit;
+}
+.ficha--duplicado * {
+    border-color: var(--gray-four) !important;
+}
+.ficha span {
+    line-height: 1.2;
+    cursor: default
+}
+.ficha__header {
+    display: grid;
+    grid-template-columns: 30px 390px 669px 226px
+}
+.ficha__header__col-cmam {
+    background-color: var(--black) !important;
+}
+.ficha__header__cmam-modelo-01 {
+    color: var(--yt);
+    transform: rotate(-90deg);
+    display: inline-block;
+    text-wrap: nowrap
+}
+.ficha__header--display-grid {
+    display: grid;
+    grid-template-rows: 86px repeat(3, 27px);
+}
+.ficha__linha-de-emblema {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    grid-template-rows: 85px;
+    align-items: center
+}
+.ficha__emblema {
+    display: block;
+    margin: auto;
+    width: 80px
+}
+.ficha__box-descricao-de-emblema {
+    margin-top: 6px
+}
+.ficha__box-descricao-de-emblema span {
+    display: block;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+.ficha__header__container-de-input,
+.container-vazia {
+    display: flex;
+    align-items: center;
+    min-height: 27px;
+    max-height: 27px;
+    overflow: hidden;
+}
+.ficha__header__container-de-input--padding-l {
+    padding-left: 8px;
+}
+.ficha__header__container-de-input input {
+    flex: 1;
+    margin-left: 2px;
+    display: block;
+    min-height: 24px;
+    width: 100%;
+}
+.ficha__header__container-de-input input[type=date] {
+    margin-left: 0;
+    max-width: initial;
+}
+.ficha__header__container-de-input input[type=number] {
+    margin: 0;
+}
+.ficha input:focus {
+    border-bottom: 2px solid var(--blue);
+    background-color: var(--greenyellow);
+    color: var(--cor-de-texto);
+}
+.ficha input[readonly]:focus {
+    border-bottom: 1px solid var(--cor-de-borda);
+    background-color: inherit;
+}
+@media screen {
+    .ficha [readonly].input--realcar-totais:focus,
+    .input--realcar-totais {
+        background-color: var(--cor-de-realce-de-totais);
+    }
+}
+.ficha [readonly].input--bg-color-danger:focus,
+.input--bg-color-danger {
+    background-color: var(--cor-de-risco);
+    color: var(--yt)
+}
+.ficha__col-com-titulo {
+    display: grid;
+    grid-template-rows: 86px 27px
+}
+.col-com-titulo-requisicao__linha-do-titulo {
+    height: 86px
+}
+.ficha__titulo-requisicao {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+}
+.ficha__header__campo-para-num-de-req {
+    min-height: 25px;
+    margin-left: 12px;
+    display: inline-block;
+    width: 190px;
+    text-align: center;
+    color: var(--cor-de-risco);
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+}
+.col-com-titulo-requisicao__linha-de-provincia {
+    display: grid;
+    grid-template-columns: 241px 100px 208px 35px 85px;
+}
+.col-com-titulo-requisicao__linha-de-kits {
+    display: grid;
+    grid-template-columns: 241px 100px 78px 78px 30px 22px 35px 85px;
+}
+.ficha__header__col-tipo-de-requisicao {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0 8px;
+}
+.ficha__col-tipo-de-requisicao__subcol {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.ficha__col-tipo-de-requisicao__subcol--min-height {
+    min-height: 18px;
+}
+.col-tipo-de-requisicao__label-data-de-requisicao {
+    white-space: nowrap;
+}
+.col-tipo-de-requisicao__input-data-de-requisicao {
+    width: 95px;
+    margin-left: 2px;
+    margin-right: 1px;
+}
+.ficha__main__header {
+    display: grid;
+    grid-template-columns: 60px 360px 669px repeat(2,113px);
+    margin: 5px 0 3px;
+}
+@media screen {
+    .ficha__main__header {
+        position: sticky;
+        top: 0;
+        z-index: 222;
+        background-color: var(--yt)
+    }
+    .ficha--duplicado .ficha__main__header,
+    .ficha--triplicado .ficha__main__header {
+        background-color: inherit;
+    }
+}
+.ficha__main__header--clone {
+    display: none;
+}
+@media print {
+    .ficha__main__header--clone {
+        display: grid;
+        page-break-before: always;
+    }
+}
+.ficha__header__col-designacao {
+    display: grid;
+    grid-template-rows: 3.76fr 1fr;
+    padding: 0 8px
+}
+.ficha__col-designacao__container-de-nome-dosagem-e-forma {
+    display: flex;
+    justify-content: space-between
+}
+.ficha__col-com-titulo-req-do-nivel-prov-e-distrital {
+    display: grid;
+    grid-template-rows: repeat(2,27px) 64px
+}
+.ficha__linha-controlo-da-ficha-de-stock-e-inventario {
+    display: grid;
+    grid-template-columns: 419px 1fr
+}
+.controlo-de-stock-e-inventario__linha-com-subtitulos {
+    display: grid;
+    grid-template-columns: 85px repeat(2,78px) 100px repeat(2,78px) 87px 85px
+}
+.controlo-de-stock-e-inventario__col-subtitulo {
+    display: grid;
+    grid-template-rows: 39px 1fr;
+    text-align: center;
+}
+.controlo-de-stock-e-inventario__subtitulo-nao-abreviado {
+    display: flex;
+    justify-content: center;
+    padding-top: 4.5px;
+}
+.controlo-de-stock-e-inventario__subtitulo-nao-abreviado.--rowspan-2 {
+    grid-row: 1/3;
+}
+.ficha__col-qtd-autorizada {
+    text-align: center;
+}
+.ficha__main__body {
+    min-height: 540px;
+}
+.ficha__linha-de-inputs {
+    display: grid;
+    grid-template-columns: 60px 360px 85px repeat(2,78px) 100px repeat(2,78px) 87px 85px repeat(2,113px);
+    grid-template-rows: 27px;
+    z-index: 111;
+    position: relative;
+}
+@media print {
+    .ficha__linha-de-inputs--1a-da-pagina {
+        border-top: 1px solid var(--cor-de-borda);
+    } 
+}
+@media screen {
+    .ficha__linha-de-inputs.--hide {
+        display: none;
+    }
+}
+.ficha__linha-de-inputs input {
+    border-left: 1px solid var(--cor-de-borda);
+    border-bottom: 1px solid var(--cor-de-borda);
+    text-align: center;
+    font-weight: 700;
+}
+.ficha__linha-de-inputs:first-child input {
+    border-top: 1px solid var(--cor-de-borda);
+}
+.ficha__linha-de-inputs input:last-child {
+    border-right: 1px solid var(--cor-de-borda);
+}
+.ficha__linha-de-inputs input:nth-child(2) {
+    padding: 0 8px;
+    text-align: left;
+}
+.msg-nothing-found-to-filtrar-medicamentos {
+    color: var(--gray-five);
+    position: absolute;
+    top: 12px;
+    z-index: 333;
+    left: calc(50vw - 302.17px / 2);
+}
+@media print {
+    .msg-nothing-found-to-filtrar-medicamentos {
+        display: none;
+    }
+}
+.ficha__main__body {
+    position: relative;
+}
+.ficha__rodape {
+    margin-top: 5px;
+    padding: 8px;
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: 761px 1fr
+}
+.ficha__rodape--clone {
+    border-bottom: 1px solid var(--cor-de-borda);
+    display: none;
+}
+@media print {
+    .ficha__rodape--clone {
+        display: grid;
+    }
+}
+.ficha__rodape__input {
+    min-width: 200px
+}
+@media print {
+    .ficha__rodape__input {
+        border: none;
+    }
+}
+.ficha__rodape__col-de-visto {
+    padding-left: 8px;
+}
+.ficha__aside {
+    position: absolute;
+    top: 326px;
+    left: 0;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    height: 470px;
+    width: 20px;
+    overflow: hidden;
+}
+.ficha__aside__tipo-de-copia {
+    transform: rotate(-90deg);
+    display: flex;
+    align-items: center;
+    max-width: 20px
+}
+.ficha__tipo-de-copia__label {
+    margin-right: 25px;
+    cursor: pointer;
+}
+.ficha__tipo-de-copia__checkbox {
+    width: 15px;
+    height: 15px
+}
+.div-exc {
+    position: fixed;
+    background-color: var(--yt);
+    width: 100%;
+    max-width: 560px;
+    min-height: 284px;
+    right: calc(50vw - 560px / 2);
+    top: calc(50vh - 284px / 2);
+    z-index: 1000000;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 4px;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+}
+.div-exc--small {
+    max-width: 328px;
+    right: calc(50vw - 328px / 2);
+    top: calc(50vh - 239px / 2);
+    min-height: 239px;
+}
+@media screen and (max-width: 328px) {
+    .div-exc--small {
+        right: 0;
+    }
+}
+.div-exc.--on {
+    display: flex;
+}
+.div-exc__titulo,
+.div-exc__p {
+    margin: 7px 0;
+    line-height: 1.3;
+}
+.div-exc__msg {
+    display: inline-block;
+    padding: 4px;
+    color: tomato;
+    background-color: var(---gray-light);
+    text-align: center;
+    font-weight: 700;
+}
+.div-exc__input-msg {
+    min-height: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    display: block;
+    width: 98%;
+    margin: 8px auto;
+    padding: 4px;
+}
+.div-exc__input-msg:focus {
+    border-width: 2px;
+    border-color: tomato;
+}
+.div-exc__input-msg--no-margin-b {
+    margin-bottom: 0;
+    border: 2px solid var(--gray-a);
+}
+.div-exc__linha-de-conf-e-tent {
+    margin-top: 5px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.div-exc__p-alerta {
+    transition-duration: 0.15s;
+    margin: 8px 0px 0px;
+}
+.div-exc__p-alerta.--on {
+    font-size: 14px;
+    color: #dd0000;
+    background-color: #faecc6;
+    padding: 8px;
+    border-top: 1px solid var(--orange);
+}
+.div-exc__p-alerta--codigo-inv {
+    font-size: 12px !important;
+}
+.div-exc__btn-conf {
+    background-color: var(--gray-a);
+    color: var(--yt);
+    width: 100px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: default;
+}
+.div-exc__btn-conf--width-100 {
+    width: 100%;
+    padding: 10px;
+}
+.div-exc__btn-conf.--on {
+    background-color: var(--blue);
+    cursor: pointer;
+}
+.div-exc__p__acertos-output {
+    display: inline-block;
+    min-height: 16px;
+    width: 20px;
+    border: 1px solid var(--gray);
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+    color: tomato;
+}
+.div-exc__p-solicitar-cod {
+    align-self: flex-start;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
