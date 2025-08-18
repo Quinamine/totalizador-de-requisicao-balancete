@@ -34,7 +34,7 @@ function destrancarCelulas() {
 function liberarAcesso() {
     divExcSmall.classList.remove("--on");
     divExcBig.classList.remove("--on");
-    desfoque.classList.remove("--on");
+    desfoque.classList.remove("--on","z-index-1000");
     destrancarCelulas();
 }
 function removerEspacosEmBranco(str) {
